@@ -124,7 +124,7 @@ lstm_model %>% fit(X_train, y_train, epochs = 20, batch_size = 32, validation_sp
 
 
 lstm_pred <- ifelse(predict(lstm_model, X_test) > 0.5, 1, 0)
-test_data$LSTM_Return <- lstm_pred * test_data$Return  # Add LSTM return
+test_data$LSTM_Return <- lstm_pred * test_data$Return  
 
 save_model_hdf5(lstm_model, "bitcoin_lstm_model.h5")
 # ---------------------------- Buy & Hold Strategy -------------------------------
@@ -233,7 +233,7 @@ plot_title <- paste0(
 rf_signals <- data.frame(
   Date = index(test_data),
   Signal = ifelse(rf_pred == 1, "Buy", "Sell"),
-  Price = test_data$Cumulative_RF  # Use cumulative return for positioning in the plot
+  Price = test_data$Cumulative_RF  
 )
 
 
