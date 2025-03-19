@@ -1,4 +1,4 @@
-# ---------------------------- Load Required Packages -------------------------------
+
 install.packages(c("quantmod", "TTR", "caret", "randomForest", "xgboost", "PerformanceAnalytics", "rugarch", "forecast", "ggplot2", "dplyr", "xts"))
 install.packages("xgboost")
 library(quantmod)
@@ -15,10 +15,10 @@ library(xts)
 library(fGarch)
 
 
-library(nnet)              # For simple MLP Neural Network
-library(keras)             # Deep Learning with Keras (LSTM, CNN)
-library(tensorflow)        # TensorFlow backend for Keras
-library(tidyverse)         # For data manipulation
+library(nnet)              
+library(keras)             
+library(tensorflow)        
+library(tidyverse)         
 
 
 getSymbols("BTC-USD", src = "yahoo", from = "2018-01-01", auto.assign = TRUE)
